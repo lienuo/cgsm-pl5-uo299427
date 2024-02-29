@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Informe de prácticas  (2023-2024)</title>
+        <link rel="stylesheet" type="text/css" href="report.css">
+    </head>
+    <body>
+        <!-- Información general -->
+        <div id="head">
+            <table id="general">
+                <tr>
+                    <th class="header">Nombre:</th>
+                    <td>Lien Burgos Pérez</td>                     
+                </tr>
+                <tr>
+                    <th>Práctica:</th>
+                    <td>5</td> 
+                </tr>
+            </table>
+        </div>
+        <div id="content">
+            <h2>Resumen de Tareas</h2>
+            <p>En esta sesión se aprendió a trabajar con DASH que es la división de los flujos de audio/vídeo en pequeños segmentos que se transportan mediante HTTP.  Entre las características está el streaming adaptativo. Para desarrollar esta función, se define un manifiesto es un fichero con extensión. mpd<br>
+                Vimos dos ejemplos de manifiesto MPEG-DASH.<br>
+                •	¿Cuántas codificaciones de audio distintas puede utilizar el cliente para adaptarse a condiciones cambiantes de la red?<br>
+                Manifiesto 1: En este caso tiene una.<br>
+                Manifiesto 2: En este caso tiene una.<br>
+                •	¿Y de video?<br>
+                Manifiesto 1: Cuatro codificaciones de video distintas para adaptarse a condiciones cambiantes de la red.<br>
+                Manifiesto 2: Tres codificaciones de video distintas para adaptarse a condiciones cambiantes de la red.<br>
+                •	¿Cuántas resoluciones de vídeo distintas puede usar el cliente? Indica cuáles.<br>
+                Manifiesto 1: En este caso utiliza la misma resolución de video (854x480).<br>
+                Manifiesto 2: En este caso utiliza tres resoluciones de video (512x288), (768x432), (1280x720).<br>
+                Para continuar con el desarrollo de la clase práctica vamos a montar un servicio de vídeo bajo demanda utilizando MPEG-DASH.<br>
+                Para ellos utilizaremos una máquina virtual GNU/Linux para servir los contenidos multimedia. La máquina virtual creada tiene configurada la red como "NAT" para ellos incorpora una regla para redirigir el tráfico TCP dirigido hacia el puerto 60022 hacia el puerto 22. <br>
+                Posteriormente para realizar manifiesto necesitamos Instalar el paquete GPAC en nuestra máquina virtual con el siguiente par de comandos:sudo apt-get update y sudo apt-get install gpac.
+                Para utilizar un fichero de vídeo es necesario demultiplexar audio y vídeo y lo logramos con el paquete ffmpeg ya con los ficheros en el estado que deseamos, podemos con la herramienta MP4Box generar el manifiesto.<br>
+                Habrá que preparar el vídeo para distribuirlo mediante streaming. Concretamente, se ofrecerá una única pista de audio y el vídeo en tres resoluciones
+
+            </p>
+            <iframe class="container" src="./textures/maquina.png">     
+            </iframe>
+            <iframe class="container" src="./textures/Dashvideo.png">     
+            </iframe> 
+               
+            <h2>Ejercicio 1</h2>
+                <p>En esta escena se preparará el vídeo para distribuirlo mediante streaming. Se mostrará una única pista de audio y el vídeo en tres resoluciones entre las que podrá conmutar el cliente.
+                </p>
+                      
+                <iframe class="container" src="prac5-1.html">     
+                </iframe>
+            <h2>Ejercicio 2</h2>
+                <p>En esta escena tenemos la posibilidad de utilizar textura de un vídeo servido con MPEG-DASH.. Esto nos permite utilizar el mismo como textura en un objeto 3D. </p>
+                <iframe class="container" src="prac5-2.html">  </iframe>
+            <h2>Dificultades Encontradas</h2>
+            <p> La segmentación puede añadir complejidad al flujo de trabajo de producción de contenido. Además, la entrega de vídeo mediante MPEG-DASH a menudo requiere servidores de streaming compatibles o software de transcodificación específico </p>
+            
+</html>
